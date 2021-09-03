@@ -14,7 +14,7 @@ spec:
         app: backend
     spec:
       containers:
-        - image: asia-northeast1-docker.pkg.dev/kzs-sandbox/toybox/backend-grpc:v1
+        - image: asia-northeast1-docker.pkg.dev/kzs-sandbox/public/backend-grpc:v1
           imagePullPolicy: Always
           name: backend
           ports:

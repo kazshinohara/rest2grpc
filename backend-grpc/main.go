@@ -14,9 +14,9 @@ import (
 )
 
 var (
-	port     = os.Getenv("PORT")
-	version  = os.Getenv("VERSION")
-	kind     = os.Getenv("KIND")
+	port    = os.Getenv("PORT")
+	version = os.Getenv("VERSION")
+	kind    = os.Getenv("KIND")
 )
 
 type WhereamiServer struct {
@@ -29,10 +29,10 @@ func (s *WhereamiServer) GetServerInfo(ctx context.Context, empty *emptypb.Empty
 	hostname := resolveHostname()
 
 	return &pb.ServerInfo{
-		Kind: kind,
-		Version: version,
-		Region: region,
-		Cluster: cluster,
+		Kind:     kind,
+		Version:  version,
+		Region:   region,
+		Cluster:  cluster,
 		Hostname: hostname}, nil
 }
 
@@ -74,8 +74,8 @@ func resolveHostname() string {
 	return hostname
 }
 
-func main(){
-	lis, err := net.Listen("tcp", ":" + port)
+func main() {
+	lis, err := net.Listen("tcp", ":"+port)
 	if err != nil {
 		log.Fatalf("failed to listen: %v", err)
 	}
